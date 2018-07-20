@@ -1,6 +1,6 @@
 {
     "name": "bahirul/yii2-autonumber",
-    "description": "Auto number extension for the Yii framework",
+    "description": "Auto number extension for the Yii framework + Enhacement",
     "keywords": ["yii2", " extension", " autonumber", " behavior"],
     "license": "BSD-3-Clause",
     "type": "yii2-extension",
