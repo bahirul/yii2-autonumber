@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist mdmsoft/yii2-autonumber "~1.0"
+php composer.phar require --prefer-dist bahirul/yii2-autonumber "~1.0"
 ```
 
 or add
 
 ```
-"mdmsoft/yii2-autonumber": "~1.0"
+"bahirul/yii2-autonumber": "~1.0"
 ```
 
 to the require section of your `composer.json` file.

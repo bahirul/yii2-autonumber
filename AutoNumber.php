@@ -1,6 +1,6 @@
 <?php
 
-namespace mdm\autonumber;
+namespace bahirul\yii2\autonumber;
 
 /**
  * This is the model class for table "auto_number".

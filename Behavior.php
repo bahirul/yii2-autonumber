@@ -1,6 +1,6 @@
 <?php
 
-namespace mdm\autonumber;
+namespace bahirul\yii2\autonumber;
 
 use yii\db\StaleObjectException;
 use yii\db\BaseActiveRecord;
