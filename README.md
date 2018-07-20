@@ -57,7 +57,7 @@ public function behaviors()
 			'class' => 'mdm\autonumber\Behavior',
 			'attribute' => 'sales_num', // required
 			'group' => $this->id_branch, // optional
-			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){} " as long the return value contain '?' character
+			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){ return 'SA.'.date('Y-m-d').'.?' } " as long the return value contain '?' character
 			'digit' => 4 // optional, default to null. 
 		],
 	];
@@ -77,3 +77,4 @@ public function rules()
     ];
 }
 ```
+- [Original Api Documentation](http://mdmsoft.github.io/yii2-autonumber/index.html)

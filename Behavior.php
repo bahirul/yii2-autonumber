@@ -71,11 +71,13 @@ class Behavior extends \yii\behaviors\AttributeBehavior
         } else {
             $value = is_callable($this->value) ? call_user_func($this->value, $event) : $this->value;
         }
+
         $group = md5(serialize([
             'class' => $this->unique ? get_class($this->owner) : false,
             'group' => $this->group,
             'attribute' => $this->attribute,
         ]));
+        
         do {
             $repeat = false;
             try {
