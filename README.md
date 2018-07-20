@@ -32,7 +32,7 @@ Usage
 Prepare required table by execute yii migrate.
 
 ```
-yii migrate --migrationPath=@mdm/autonumber/migrations
+yii migrate --migrationPath=@bahirul/yii2/autonumber/migrations
 ```
 
 if wantn't use db migration. you can create required table manually.
@@ -54,7 +54,7 @@ public function behaviors()
 {
 	return [
 		[
-			'class' => 'mdm\autonumber\Behavior',
+			'class' => 'bahirul\yii2\autonumber\Behavior',
 			'attribute' => 'sales_num', // required
 			'group' => $this->id_branch, // optional
 			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){ return 'SA.'.date('Y-m-d').'.?' } " as long the return value contain '?' character
