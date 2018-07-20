@@ -4,6 +4,8 @@ Auto Number Extension for Yii 2
 Yii2 extension to genarete formated autonumber. It can be used for generate
 document number.
 
+This extension forked from [mdm/yii2-autonumber](https://github.com/mdmsoft/yii2-autonumber) with some my own enhancement.
+
 Installation
 ------------
 
@@ -55,7 +57,7 @@ public function behaviors()
 			'class' => 'mdm\autonumber\Behavior',
 			'attribute' => 'sales_num', // required
 			'group' => $this->id_branch, // optional
-			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number
+			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){} " as long the return value contain '?' character
 			'digit' => 4 // optional, default to null. 
 		],
 	];
@@ -75,5 +77,3 @@ public function rules()
     ];
 }
 ```
-
-- [Api Documentation](http://mdmsoft.github.io/yii2-autonumber/index.html)

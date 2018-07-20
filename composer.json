@@ -1,5 +1,5 @@
 {
-    "name": "mdmsoft/yii2-autonumber",
+    "name": "bahirul/yii2-autonumber",
     "description": "Auto number extension for the Yii framework",
     "keywords": ["yii2", " extension", " autonumber", " behavior"],
     "license": "BSD-3-Clause",
@@ -16,11 +16,11 @@
     },
     "autoload": {
         "psr-4": {
-            "mdm\\autonumber\\": ""
+            "bahirul\\yii2\\autonumber\\": ""
         }
     },
     "extra": {
-        "bootstrap": "mdm\\autonumber\\Bootstrap",
+        "bootstrap": "bahirul\\yii2\\autonumber\\Bootstrap",
         "branch-alias": {
             "dev-master": "1.x-dev"
         }

@@ -75,7 +75,6 @@ class Behavior extends \yii\behaviors\AttributeBehavior
             'class' => $this->unique ? get_class($this->owner) : false,
             'group' => $this->group,
             'attribute' => $this->attribute,
-            'value' => $value
         ]));
         do {
             $repeat = false;
