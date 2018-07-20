@@ -4,7 +4,7 @@ Auto Number Extension for Yii 2
 Yii2 extension to genarete formated autonumber. It can be used for generate
 document number.
 
-This extension forked from [mdm/yii2-autonumber](https://github.com/mdmsoft/yii2-autonumber) with some my own enhancement.
+This extension forked from [mdm/yii2-autonumber](https://github.com/mdmsoft/yii2-autonumber) with some mods.
 
 Installation
 ------------
