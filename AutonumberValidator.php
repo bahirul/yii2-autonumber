@@ -71,6 +71,13 @@ class AutonumberValidator extends \yii\validators\Validator
     private static $_executed = [];
 
     /**
+     * [$db description]
+     *
+     * @var \yii\db\Connection or NULL
+     */
+    public $db;
+
+    /**
      * @inheritdoc
      */
     public function validateAttribute($object, $attribute)
@@ -108,6 +115,9 @@ class AutonumberValidator extends \yii\validators\Validator
             'value' => $value
         ]));
 
+        //set AutoNumber db conn
+        AutoNumber::setDbConn($this->db);
+
         $model = AutoNumber::findOne($group);
         if ($model) {
             $number = $model->number + 1;
@@ -115,6 +125,7 @@ class AutonumberValidator extends \yii\validators\Validator
             $model = new AutoNumber([
                 'group' => $group
             ]);
+            $model->dbConn = $this->db;
             $number = 1;
         }
         $model->update_time = time();
