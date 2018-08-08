@@ -51,6 +51,13 @@ class Behavior extends \yii\behaviors\AttributeBehavior
     public $attribute;
 
     /**
+     * [$db description]
+     *
+     * @var \yii\db\Connection or NULL
+     */
+    public $db;
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -81,6 +88,10 @@ class Behavior extends \yii\behaviors\AttributeBehavior
         do {
             $repeat = false;
             try {
+
+                //set AutoNumber db conn
+                AutoNumber::setDbConn($this->db);
+
                 $model = AutoNumber::findOne($group);
                 if ($model) {
                     $number = $model->number + 1;
@@ -88,6 +99,7 @@ class Behavior extends \yii\behaviors\AttributeBehavior
                     $model = new AutoNumber([
                         'group' => $group
                     ]);
+                    $model->dbConn = $this->db;
                     $number = 1;
                 }
                 $model->update_time = time();

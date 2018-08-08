@@ -15,6 +15,32 @@ namespace bahirul\yii2\autonumber;
 class AutoNumber extends \yii\db\ActiveRecord
 {
 
+    private static $dbConn;
+
+    /**
+     * set dynamic db connection
+     *
+     * @param [type] $db \yii\db\Connection
+     */
+    public static function setDbConn($db=null)
+    {
+        self::dbConn = $db;
+    }
+
+    /**
+     * getDb
+     *
+     * @return [type] [description]
+     */
+    public static function getDb()
+    {
+        if (self::$dbConn===null){
+            self::$dbConn = \Yii::$app->db;
+        }
+
+        return self::$dbConn;
+    }
+
     /**
      * @inheritdoc
      */
