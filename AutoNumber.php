@@ -24,7 +24,7 @@ class AutoNumber extends \yii\db\ActiveRecord
      */
     public static function setDbConn($db=null)
     {
-        self::dbConn = $db;
+        self::$dbConn = $db;
     }
 
     /**
