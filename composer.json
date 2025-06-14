@@ -1,14 +1,18 @@
 {
     "name": "bahirul/yii2-autonumber",
     "description": "Auto number extension for the Yii framework + Enhacement",
-    "keywords": ["yii2", " extension", " autonumber", " behavior"],
-    "license": "BSD-3-Clause",
+    "keywords": [
+        "yii2",
+        "extension",
+        "autonumber",
+        "behavior"
+    ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Misbahul D Munir",
-            "email": "misbahuldmunir@gmail.com"
+            "name": "Bahirul Rizki Ariyanto",
+            "email": "rizki.device@gmail.com"
         }
     ],
     "require": {
@@ -23,6 +27,17 @@
         "bootstrap": "bahirul\\yii2\\autonumber\\Bootstrap",
         "branch-alias": {
             "dev-master": "1.x-dev"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     }
 }

@@ -4,7 +4,28 @@ Auto Number Extension for Yii 2
 Yii2 extension to genarete formated autonumber. It can be used for generate
 document number.
 
-This extension forked from [mdm/yii2-autonumber](https://github.com/mdmsoft/yii2-autonumber) with some mods.
+This extension forked from [mdm/yii2-autonumber](https://github.com/mdmsoft/yii2-autonumber) with additional features.
+
+Additional Features
+-------------------
+
+- Ability to set db connection (for multiple databases)
+```php
+public function behaviors()
+{
+	return [
+		[
+			'class' => 'bahirul\yii2\autonumber\Behavior',
+            'db' => Yii::$app->db2, // set other database connection rather than default
+			'attribute' => 'sales_num', // required
+			'group' => $this->id_branch, // optional
+			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){ return 'SA.'.date('Y-m-d').'.?' } " as long the return value contain '?' character
+			'digit' => 4 // optional, default to null. 
+		],
+	];
+}
+
+```
 
 Installation
 ------------
@@ -55,6 +76,7 @@ public function behaviors()
 	return [
 		[
 			'class' => 'bahirul\yii2\autonumber\Behavior',
+            'db' => Yii::$app->db2, // set other database connection rather than default
 			'attribute' => 'sales_num', // required
 			'group' => $this->id_branch, // optional
 			'value' => 'SA.'.date('Y-m-d').'.?' , // format auto number. '?' will be replaced with generated number or you can use " 'value' => function($event){ return 'SA.'.date('Y-m-d').'.?' } " as long the return value contain '?' character
@@ -77,4 +99,4 @@ public function rules()
     ];
 }
 ```
-- [Original Api Documentation](http://mdmsoft.github.io/yii2-autonumber/index.html)
+- [Original Documentation](http://mdmsoft.github.io/yii2-autonumber/index.html)
